@@ -97,7 +97,6 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	-->
 	<assets path="art/readme.txt" rename="do NOT readme.txt" library="art"/>
 	<assets path="CHANGELOG.md" rename="changelog.txt" library="art"/>
-	<assets path="alsoft.ini" />
 	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY
 		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO
 		THEN UHHH I USED THE NAME OF THE FONT WITH SETFORMAT() ON THE TEXT!!!
@@ -247,6 +246,12 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<!-- Enable this on platforms which do not support the edsior views. -->
 	<haxedef name="CHART_EDITOR_UNSUPPORTED" if="web" />
 	<haxedef name="CHART_EDITOR_SUPPORTED" unless="web"/>
+
+	<!-- OpenAL config -->
+	<section if="desktop">
+		<assets path="alsoft.txt" rename="plugins/alsoft.ini" type="text" if="windows" />
+		<assets path="alsoft.txt" rename="plugins/alsoft.conf" type="text" unless="windows"/>
+	</section>
 
 	<!-- Options for Polymod -->
 	<section if="polymod">
